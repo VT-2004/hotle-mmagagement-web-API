@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Our Menu | Traveller's Heaven</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav__bar">
+          <div class="logo">
+            <a href="index.html"><img src="assets/logo.png" alt="logo" /></a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#service">Services</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="offers.html">Special Offers</a></li>
+          <li><a href="guides.html">Travel Guides</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="section__container menu__container">
+      <p class="section__subheader">OUR MENU</p>
+      <h2 class="section__header">Culinary Excellence</h2>
+      
+      <div class="menu__categories">
+        <button class="menu__category active" data-category="all">All</button>
+        <button class="menu__category" data-category="breakfast">Breakfast</button>
+        <button class="menu__category" data-category="lunch">Lunch</button>
+        <button class="menu__category" data-category="dinner">Dinner</button>
+        <button class="menu__category" data-category="desserts">Desserts</button>
+      </div>
+
+      <div class="menu__grid">
+        <!-- Breakfast Items -->
+        <div class="menu__item breakfast">
+          <img src="assets/menu/masala-dosa.jpg" alt="Masala Dosa" />
+          <div class="menu__item__content">
+            <h3>Masala Dosa</h3>
+            <p>Crispy rice crepe filled with spiced potato, served with sambar and coconut chutney</p>
+            <span class="price">₹180</span>
+            <span class="dietary"><i class="ri-leaf-line"></i> Vegetarian</span>
+          </div>
+        </div>
+
+        <!-- Lunch Items -->
+        <div class="menu__item lunch">
+          <img src="assets/menu/thali.jpg" alt="Special Thali" />
+          <div class="menu__item__content">
+            <h3>Royal Indian Thali</h3>
+            <p>Complete meal with dal, paneer, vegetables, rice, roti, raita, and dessert</p>
+            <span class="price">₹350</span>
+            <span class="dietary"><i class="ri-leaf-line"></i> Veg/Non-veg options</span>
+          </div>
+        </div>
+
+        <!-- Dinner Items -->
+        <div class="menu__item dinner">
+          <img src="assets/menu/butter-chicken.jpg" alt="Butter Chicken" />
+          <div class="menu__item__content">
+            <h3>Butter Chicken</h3>
+            <p>Tender chicken in rich tomato-butter gravy, served with naan bread</p>
+            <span class="price">₹420</span>
+            <span class="dietary"><i class="ri-fire-line"></i> Chef's Special</span>
+          </div>
+        </div>
+
+        <!-- Dessert Items -->
+        <div class="menu__item desserts">
+          <img src="assets/menu/gulab-jamun.jpg" alt="Gulab Jamun" />
+          <div class="menu__item__content">
+            <h3>Gulab Jamun</h3>
+            <p>Soft milk dumplings in sweet rose-flavored syrup</p>
+            <span class="price">₹120</span>
+            <span class="dietary"><i class="ri-star-line"></i> House Special</span>
+          </div>
+        </div>
+
+        <!-- Additional Dessert Items -->
+        <div class="menu__item desserts">
+          <img src="assets/menu/rasmalai.jpg" alt="Rasmalai" />
+          <div class="menu__item__content">
+            <h3>Rasmalai</h3>
+            <p>Soft cottage cheese dumplings in creamy saffron milk, garnished with pistachios</p>
+            <span class="price">₹150</span>
+            <span class="dietary"><i class="ri-star-line"></i> Premium Dessert</span>
+          </div>
+        </div>
+
+        <div class="menu__item desserts">
+          <img src="assets/menu/gajar-halwa.jpg" alt="Gajar Ka Halwa" />
+          <div class="menu__item__content">
+            <h3>Gajar Ka Halwa</h3>
+            <p>Traditional carrot pudding with cardamom, nuts, and pure ghee</p>
+            <span class="price">₹140</span>
+            <span class="dietary"><i class="ri-leaf-line"></i> Seasonal Special</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="menu__special">
+      <div class="section__container">
+        <h2>Today's Special</h2>
+        <div class="special__content">
+          <div class="special__image">
+            <img src="assets/menu/biryani.jpg" alt="Special Biryani" />
+          </div>
+          <div class="special__details">
+            <h3>Hyderabadi Biryani</h3>
+            <p>Fragrant basmati rice cooked with tender meat/vegetables, aromatic spices, and saffron</p>
+            <div class="special__price">
+              <span class="original">₹450</span>
+              <span class="discounted">₹380</span>
+            </div>
+<a href="table-reservation.html">
+    <button class="btn">Reserve a Table</button>
+</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="contact">
+      <!-- Copy the footer content from index.html -->
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+      // Menu filtering functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const categoryButtons = document.querySelectorAll('.menu__category');
+        const menuItems = document.querySelectorAll('.menu__item');
+
+        categoryButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            const category = button.dataset.category;
+            
+            menuItems.forEach(item => {
+              if (category === 'all' || item.classList.contains(category)) {
+                item.style.display = 'block';
+              } else {
+                item.style.display = 'none';
+              }
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html> 

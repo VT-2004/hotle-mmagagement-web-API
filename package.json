@@ -1,0 +1,27 @@
+{
+  "name": "travel-heaven-hotel-booking",
+  "version": "1.0.0",
+  "description": "Hotel booking application with React frontend and Express backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend/react-app && npm start",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend/react-app && npm start",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend/react-app && npm install"
+  },
+  "keywords": [
+    "hotel",
+    "booking",
+    "react",
+    "express",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+} 

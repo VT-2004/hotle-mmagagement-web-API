@@ -1,0 +1,49 @@
+
+=== New User Registration ===
+Time: 18/4/2025, 10:17:59 am
+Name: Test User
+Email: test@example.com
+Password: $2b$10$JPjI.ugaygYioD5dfKzymeaLO4mEWbvVqfNC7XD4dM0G0.MMomylu
+================================
+
+=== New User Registration ===
+Time: 18/4/2025, 10:18:32 am
+Name: VIKAS HANAMANT TALAWAR
+Email: talawarh316@iiiitmanipur.ac.in
+Password: $2b$10$aNBIpu6Ty2VQeDtIl7YO1.Hid05Cul3tJ3gxk88hqIMb4o.5tqia6
+================================
+
+=== New User Registration ===
+Time: 18/4/2025, 10:46:01 am
+Name: VIKAS HANAMANT TALAWAR
+Email: talawarh316@gmail.com
+Password: $2b$10$vPc9zy1v3UkYwLELZbqAW.3YxtFa2.oHL2zGZ5.53XSuALUDH8gs2
+================================
+
+=== New User Registration ===
+Time: 19/4/2025, 8:51:22 pm
+Name: VIKAS HANAMANT TALAWAR
+Email: talawarh316@gmail.com
+Password: 1234
+================================
+
+=== New User Registration ===
+Time: 19/4/2025, 8:51:44 pm
+Name: VIKAS HANAMANT TALAWAR
+Email: talawarh316@gmail.com
+Password: 1234
+================================
+
+=== New User Registration ===
+Time: 19/4/2025, 8:55:43 pm
+Name: VIKAS HANAMANT TALAWAR
+Email: talawarh316@gmail.com
+Password: 1234
+================================
+
+=== New User Registration ===
+Time: 19/4/2025, 9:01:51 pm
+Name: VIKAS HANAMANT TALAWAR
+Email: talawarh316@gmail.com
+Password: 1234
+================================

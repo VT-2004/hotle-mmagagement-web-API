@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Traveller's Heaven | Customer Reviews</title>
+</head>
+<body>
+  <header class="header">
+    <nav>
+      <div class="nav__bar">
+        <div class="logo">
+          <a href="index.html"><img src="assets/logo.png" alt="logo" /></a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#service">Services</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="offers.html">Special Offers</a></li>
+        <li><a href="guides.html">Travel Guides</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      
+    </nav>
+    <div class="section__container header__container">
+      <p>What Our Guests Say</p>
+      <h1>Customer Reviews</h1>
+    </div>
+  </header>
+
+  <section class="section__container">
+    <div class="section__header">
+      <p class="section__subtitle">
+        Read genuine reviews from our valued guests
+      </p>
+    </div>
+    <div class="reviews__grid">
+      <!-- Review 1 -->
+      <div class="review__card">
+        <div class="review__header">
+          <img src="assets/review-1.jpg" alt="Reviewer" class="review__photo">
+          <div>
+            <h4>J. Tharun gowda</h4>
+            <p><i>Banglore,India</i></p>
+            <div class="review__rating">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+          </div>
+        </div>
+        <div class="review__content">
+          <p>"The hotel exceeded all our expectations. The ocean view was breathtaking and the service was impeccable."</p>
+          <span class="review__date">March 15, 2025</span>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review__card">
+        <div class="review__header">
+          <img src="assets/review-2.jpg" alt="Reviewer" class="review__photo">
+          <div>
+            <h4>Mr.Arun Mathur</h4>
+            <p><i>Agra,India</i></p>
+            <div class="review__rating">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-half-fill"></i>
+            </div>
+          </div>
+        </div>
+        <div class="review__content">
+          <p>"Excellent location and comfortable rooms. The staff went above and beyond to make our stay memorable."</p>
+          <span class="review__date">January 28, 2025</span>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review__card">
+        <div class="review__header">
+          <img src="assets/review-3.jpg" alt="Reviewer" class="review__photo">
+          <div>
+            <h4>Mr.Anish Kumar</h4>
+            <p><i>Bihar,India</i></p>
+            <div class="review__rating">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-line"></i>
+            </div>
+          </div>
+        </div>
+        <div class="review__content">
+          <p>"Beautiful property with amazing amenities. The spa services were particularly wonderful after a long flight."</p>
+          <span class="review__date">December 5, 2024</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Review Form -->
+    <div class="add__review">
+      <h3>Share Your Experience</h3>
+      <form class="review__form">
+        <div class="form__group">
+          <input type="text" placeholder="Your Name" required>
+          <input type="text" placeholder="Your Location (City, Country)">
+        </div>
+        <div class="form__group">
+          <textarea placeholder="Your Review" required></textarea>
+        </div>
+        <div class="form__group">
+          <div class="rating__input">
+            <span>Your Rating:</span>
+            <div class="stars">
+              <i class="ri-star-fill" data-rating="1"></i>
+              <i class="ri-star-fill" data-rating="2"></i>
+              <i class="ri-star-fill" data-rating="3"></i>
+              <i class="ri-star-fill" data-rating="4"></i>
+              <i class="ri-star-fill" data-rating="5"></i>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Submit Review</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <!-- Footer content same as other pages -->
+  </footer>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "name": "John Doe",
+    "type": "Leisure Traveler",
+    "rating": 5,
+    "comment": "Amazing experience! The staff was very friendly and the room was clean and comfortable.",
+    "createdAt": "2023-04-01T12:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "name": "Jane Smith",
+    "type": "Business Traveler",
+    "rating": 4,
+    "comment": "Great hotel for business trips. The conference facilities were excellent.",
+    "createdAt": "2023-04-05T14:30:00.000Z"
+  },
+  {
+    "id": "3",
+    "name": "Mike Johnson",
+    "type": "Family Traveler",
+    "rating": 5,
+    "comment": "Perfect for families! The kids loved the pool and the breakfast buffet was fantastic.",
+    "createdAt": "2023-04-10T09:15:00.000Z"
+  },
+  {
+    "id": "4",
+    "name": "VIKAS HANAMANT TALAWAR",
+    "type": "Leisure Traveler",
+    "rating": 5,
+    "comment": "good",
+    "createdAt": "2025-04-17T09:05:28.223Z"
+  },
+  {
+    "id": "5",
+    "name": "ergwtg",
+    "type": "Leisure Traveler",
+    "rating": 5,
+    "comment": "vey good",
+    "createdAt": "2025-04-17T09:29:45.924Z"
+  },
+  {
+    "id": "6",
+    "name": "big black nigger",
+    "type": "Leisure Traveler",
+    "rating": 5,
+    "comment": "good",
+    "createdAt": "2025-04-17T09:34:10.219Z"
+  }
+]

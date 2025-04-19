@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Room Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('assets/R.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: space-between; /* Space between left and right containers */
+            align-items: center;
+            padding: 0 50px;
+        }
+        .left-container {
+            width: 45%;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            position: relative;
+            top: -200px;
+            padding-top: 100px;
+        }
+        .brand-heading {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        .action-heading {
+            font-size: 2rem;
+            font-weight: normal;
+        }
+        .main-container {
+            width: 45%; /* Slightly less than half for better spacing */
+            margin: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+        .form-section {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .section-title {
+            color: #333;
+            margin-top: 0;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="left-container">
+        <h1 class="brand-heading">TravelHeaven</h1>
+        <h2 class="action-heading">Book Room Here</h2>
+    </div>
+    <div class="main-container">
+        <h1 style="text-align: center; color: #333;">Hotel Room Booking</h1>
+        <form id="bookingForm">
+            <!-- Personal Information Section -->
+            <div class="form-section">
+                <h2 class="section-title">Personal Information</h2>
+                <div class="form-group">
+                    <label for="guestName">Full Name:</label>
+                    <input type="text" id="guestName" name="guestName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactNumber">Contact Number:</label>
+                    <input type="tel" id="contactNumber" name="contactNumber" required>
+                </div>
+            </div>
+
+            <!-- Booking Details Section -->
+            <div class="form-section">
+                <h2 class="section-title">Booking Details</h2>
+                <div class="form-group">
+                    <label for="roomType">Room Type:</label>
+                    <select id="roomType" name="roomType" required>
+                        <option value="">Select Room Type</option>
+                        <option value="Single">Single Room</option>
+                        <option value="Double">Double Room</option>
+                        <option value="Suite">Suite</option>
+                        <option value="Deluxe">Deluxe Room</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="checkInDate">Check-in Date:</label>
+                    <input type="datetime-local" id="checkInDate" name="checkInDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkOutDate">Check-out Date:</label>
+                    <input type="datetime-local" id="checkOutDate" name="checkOutDate" required>
+                </div>
+            </div>
+
+            <button type="submit" id="submitButton">Book Now</button>
+        </form>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script>
+        // Room prices (you can move this to the backend later)
+        const roomPrices = {
+            'Single': 1000,
+            'Double': 2000,
+            'Suite': 3000,
+            'Deluxe': 2500
+        };
+
+        // Load available rooms when page loads
+        window.addEventListener('load', async () => {
+            try {
+                const rooms = await getAvailableRooms();
+                const roomTypeSelect = document.getElementById('roomType');
+                
+                // Clear existing options except the first one
+                while (roomTypeSelect.options.length > 1) {
+                    roomTypeSelect.remove(1);
+                }
+
+                // Add available room types
+                rooms.forEach(room => {
+                    const option = document.createElement('option');
+                    option.value = room._id;
+                    option.textContent = `${room.type} - ₹${room.price}`;
+                    roomTypeSelect.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading rooms:', error);
+                alert('Failed to load available rooms. Please try again later.');
+            }
+        });
+
+        // Handle form submission
+        document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitButton = document.getElementById('submitButton');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Processing...';
+
+            try {
+                const formData = {
+                    guestName: document.getElementById('guestName').value,
+                    email: document.getElementById('email').value,
+                    contactNumber: document.getElementById('contactNumber').value,
+                    roomId: document.getElementById('roomType').value,
+                    checkInDate: document.getElementById('checkInDate').value,
+                    checkOutDate: document.getElementById('checkOutDate').value,
+                    totalPrice: roomPrices[document.getElementById('roomType').selectedOptions[0].text.split(' - ')[0]]
+                };
+
+                const booking = await createBooking(formData);
+                alert('Booking successful! Your booking ID is: ' + booking._id);
+                window.location.href = 'index.html'; // Redirect to home page
+            } catch (error) {
+                console.error('Error creating booking:', error);
+                alert('Failed to create booking. Please try again.');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Book Now';
+            }
+        });
+
+        // Update check-out date minimum based on check-in date
+        document.getElementById('checkInDate').addEventListener('change', function() {
+            const checkOutDate = document.getElementById('checkOutDate');
+            checkOutDate.min = this.value;
+            if (checkOutDate.value < this.value) {
+                checkOutDate.value = this.value;
+            }
+        });
+    </script>
+</body>
+</html>
