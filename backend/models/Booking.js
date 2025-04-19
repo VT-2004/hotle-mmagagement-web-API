@@ -1,26 +1,33 @@
 import mongoose from 'mongoose';
 
 const bookingSchema = new mongoose.Schema({
-    roomId: {
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    hotel: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Hotel',
+        required: true
+    },
+    room: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Room',
-        required: false
-    },
-    roomName: {
-        type: String,
         required: true
     },
-    guestName: {
-        type: String,
-        required: true
-    },
-    checkInDate: {
+    checkIn: {
         type: Date,
         required: true
     },
-    checkOutDate: {
+    checkOut: {
         type: Date,
         required: true
+    },
+    guests: {
+        type: Number,
+        required: true,
+        min: 1
     },
     totalPrice: {
         type: Number,
@@ -28,27 +35,13 @@ const bookingSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ['active', 'completed', 'cancelled'],
-        default: 'active'
+        enum: ['pending', 'confirmed', 'cancelled', 'completed'],
+        default: 'pending'
     },
-    contactNumber: {
+    paymentStatus: {
         type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true
-    },
-    numberOfGuests: {
-        type: Number,
-        default: 1
-    },
-    specialRequests: {
-        type: String,
-        default: ''
-    },
-    checkedOutAt: {
-        type: Date
+        enum: ['pending', 'paid', 'refunded'],
+        default: 'pending'
     },
     createdAt: {
         type: Date,

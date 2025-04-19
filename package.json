@@ -1,27 +1,30 @@
 {
   "name": "travel-heaven-hotel-booking",
   "version": "1.0.0",
-  "description": "Hotel booking application with React frontend and Express backend",
+  "description": "A modern hotel booking web application",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "start:backend": "cd backend && npm start",
-    "start:frontend": "cd frontend/react-app && npm start",
-    "dev:backend": "cd backend && npm run dev",
-    "dev:frontend": "cd frontend/react-app && npm start",
-    "install:all": "npm install && cd backend && npm install && cd ../frontend/react-app && npm install"
+    "start": "node backend/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon backend/server.js",
+    "client": "cd frontend/react-app && npm start",
+    "install-all": "npm install && cd frontend/react-app && npm install && cd ../../backend && npm install",
+    "build": "cd frontend/react-app && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "hotel",
     "booking",
+    "travel",
     "react",
-    "express",
-    "mongodb"
+    "nodejs"
   ],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
+  "author": "VT-2004",
+  "license": "MIT",
+  "dependencies": {
     "concurrently": "^8.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 } 
